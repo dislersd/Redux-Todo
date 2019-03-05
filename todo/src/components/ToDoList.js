@@ -1,12 +1,13 @@
 import React from "react";
-import ToDo from "./ToDo";
 import { connect } from "react-redux";
+//
+import ToDo from "./ToDo";
 
 const ToDoList = props => {
   return (
     <>
       {props.todos.map(todo => (
-        <ToDo key={todo.id} todo={todo} />
+        <ToDo key={todo.id} {...todo} />
       ))}
     </>
   );
@@ -14,7 +15,6 @@ const ToDoList = props => {
 
 const mapStateToProps = state => {
   return {
-    test: state.test,
     todos: state.todos
   };
 };

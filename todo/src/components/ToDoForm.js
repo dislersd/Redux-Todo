@@ -2,7 +2,7 @@ import React from "react";
 
 class ToDoForm extends React.Component {
   state = {
-    task: ''
+    todo: ''
   }
 
   handleChange = e => {
@@ -13,12 +13,13 @@ class ToDoForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='form'>
         <input 
         type="text"
-        name="task"
+        name="todo"
         value={this.state.value}
-        onChange={this.handleChange}  
+        onChange={this.handleChange}
+        placeholder='add a new todo...'  
         />
         <button> + </button>
       </div>

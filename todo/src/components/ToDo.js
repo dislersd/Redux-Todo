@@ -1,10 +1,10 @@
 import React from "react";
 
 const ToDo = props => {
-  const { todo } = props;
+  const { task } = props;
   return (
     <>
-      <h1>{todo.task}</h1>
+      <h1>{task}</h1>
     </>
   );
 };

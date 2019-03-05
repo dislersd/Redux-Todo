@@ -1,5 +1,4 @@
 import React from "react";
-// import { reducer } from "./reducers";
 //
 import "./css/App.css";
 //
