@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToDo } from "../actions";
+import { bindActionCreators } from "redux";
+import { addToDo, toggleToDo } from "../actions";
 
 class ToDoForm extends React.Component {
   state = {
@@ -35,13 +36,17 @@ class ToDoForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    todo: state.todos
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     todo: state.todos
+//   };
+// };
+
+function mapDispatch(dispatch) {
+  return bindActionCreators({ addToDo, toggleToDo }, dispatch);
+}
 
 export default connect(
-  mapStateToProps,
-  { addToDo }
+  null,
+  mapDispatch
 )(ToDoForm);
