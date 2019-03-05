@@ -30,7 +30,7 @@ class ToDoForm extends React.Component {
           onChange={this.handleChange}
           placeholder="add a new todo..."
         />
-        <button onClick={this.addToDo}> + </button>
+        <button onClick={this.addToDo}> ➕ </button>
       </div>
     );
   }

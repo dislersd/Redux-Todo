@@ -2,12 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 //
 import ToDo from "./ToDo";
-import { toggleToDo } from "../actions";
+import { toggleToDo, deleteToDo } from "../actions";
 
 class ToDoList extends React.Component {
+
   toggle = id => {
     this.props.toggleToDo(id);
   };
+
+  delete = id => {
+    this.props.deleteToDo(id)
+  }
 
   render() {
     return (
@@ -17,6 +22,7 @@ class ToDoList extends React.Component {
           key={todo.id}
           {...todo}
           toggle={this.toggle}
+          delete={this.delete}
           />
           
         ))}
@@ -33,5 +39,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { toggleToDo }
+  { toggleToDo, deleteToDo }
 )(ToDoList);
